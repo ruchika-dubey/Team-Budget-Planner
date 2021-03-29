@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/01ccd79f14.js" crossorigin="anonymous"></script>
+  <title>ABC Tech Solutions</title>
+  <script>
+    function fun() {
+      var ref = document.getElementById("tbody");
+      //console.log(localStorage);
+      var i;
+      var total = 0;
+      console.log(localStorage.length);
+      var j = 0;
+      var k = localStorage.length;
+      var len = sessionStorage['index'];
+      for (i in localStorage) {
+        if (j == k)
+          break;
+        var ite = localStorage[i];
+        console.log(ite);
+        var it = ite.split("+");
+        total += parseInt(it[1]);
+        console.log(it);
+        var table = document.getElementById("table");
+        var row = table.insertRow(j + 1);
+
+        var cell2 = row.insertCell(0);
+        var cell3 = row.insertCell(1);
+
+        cell2.innerHTML = it[0];
+        cell3.innerHTML = it[1];
+        j += 1;
+
+      }
+      var t = document.getElementById("table");
+      var r = t.insertRow(j + 1);
+      var c1 = r.insertCell(0);
+      var c2 = r.insertCell(1);
+      r.colSpan = "2";
+      c1.innerHTML = "Total";
+      c2.innerHTML = "Rs " + total;
+    }
+    function fun2() {
+      sessionStorage.clear();
+      localStorage.clear();
+    }
+
+  </script>
+
+
+</head>
+
+<body onload="fun()" onabort="fun2()">
+
+  <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <a class="navbar-brand" href="index.html">
+      <i class="fas fa-cogs"></i> ABC Tech Solutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Featured Products</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Finance
+            <i class="fas fa-wallet"></i>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+  <section>
+    <div class="shadow p-3 mb-5 bg-white rounded main" id="main">
+      <table class="table" id="table">
+        <thead>
+          <tr>
+
+            <th scope="col">Services Acquired</th>
+            <th scope="col">Price</th>
+
+          </tr>
+        </thead>
+        <tbody id="tb">
+
+
+
+        </tbody>
+
+
+      </table>
+
+
+    </div>
+
+  </section>
+
+
+
+
+
+
+  <footer>
+    <footer class="bg-dark text-center text-lg-start navbar-height">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(223, 201, 201, 0.2);">
+        © 2021 Copyright:
+        <a class="text-dark" href="">abctech.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
